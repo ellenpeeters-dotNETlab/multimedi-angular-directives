@@ -1,0 +1,22 @@
+<table>
+    <caption>Holiday</caption>
+    <thead>
+        <tr>
+            <th>City</th>
+            <th>Temperature</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let holidayOption of holidayOptions">
+            <td>{{ holidayOption.city }}</td>
+            <td>{{ holidayOption.temperature }}</td>
+            <td>
+                <div *ngIf="holidayOption.temperature < 5">very cold</div>
+                <div *ngIf="holidayOption.temperature > 5 && holidayOption.temperature < 12">cloudy</div>
+                <div *ngIf="holidayOption.temperature > 17">very nice weather</div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div>Our best holiday option is: {{ getBestHolidayOption() }}</div>
